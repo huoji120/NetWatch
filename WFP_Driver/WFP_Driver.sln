@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WFP_Driver", "WFP_Driver.vcxproj", "{ABB9F8B9-7762-4C8B-B431-0F925885F21E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|ARM.Build.0 = Debug|ARM
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|ARM64.Build.0 = Debug|ARM64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|x64.ActiveCfg = Debug|x64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|x64.Build.0 = Debug|x64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|x64.Deploy.0 = Debug|x64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|x86.ActiveCfg = Debug|Win32
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|x86.Build.0 = Debug|Win32
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Debug|x86.Deploy.0 = Debug|Win32
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|ARM.ActiveCfg = Release|ARM
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|ARM.Build.0 = Release|ARM
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|ARM.Deploy.0 = Release|ARM
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|ARM64.ActiveCfg = Release|ARM64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|ARM64.Build.0 = Release|ARM64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|ARM64.Deploy.0 = Release|ARM64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|x64.ActiveCfg = Release|x64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|x64.Build.0 = Release|x64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|x64.Deploy.0 = Release|x64
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|x86.ActiveCfg = Release|Win32
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|x86.Build.0 = Release|Win32
+		{ABB9F8B9-7762-4C8B-B431-0F925885F21E}.Release|x86.Deploy.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3BF6E55-8696-48B1-A4C3-3CE125FAC80D}
+	EndGlobalSection
+EndGlobal

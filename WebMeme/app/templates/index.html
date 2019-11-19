@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>威胁流量检测系统 by huoji</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+  <style>
+    .main {
+      overflow-x: hidden;
+      margin: 0 auto;
+      max-width: 60%;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="ui attached stackable menu">
+      <div class="ui container">
+        <a class="item" id="BlackIP" onclick="ClickCallback(1)">
+          <i class="home icon"></i>恶意IP
+        </a>
+        <a class="item" id="BlackData" onclick="ClickCallback(2)">
+          <i class="grid layout icon"></i>恶意流量
+        </a>
+        <a class="item">
+          <i class="mail icon"></i>日志记录(暂未开发)
+        </a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="push_data">
+        <div class="ui fluid action input">
+          <input id="data_input" type="text"
+            placeholder="结束@加备注,比如192.168.1.1@路由器地址,备注就是路由器地址,输入流量特征的时候,请输入二进制特征码,??代表模糊匹配,例如 58 78 25 46 89 ?? ?? ?? 47">
+          <div class="ui button" id="push_data">提交</div>
+        </div>
+      </div>
+      <table class=" ui celled table">
+        <thead>
+          <tr>
+            <th id="table_type1">{{type.table_type1}}</th>
+            <th id="table_type2">{{type.table_type2}}</th>
+          </tr>
+        </thead>
+        <tbody id="main_table">
+          <tr>
+            {% for iter in main %}
+            <td v-for="info in table_data">
+              {{ iter.data }}
+            </td>
+            <td v-for="info in table_data">
+              {{ iter.text }}
+            </td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+<script>
+  var now_page = 1;
+  ClickCallback = function (pagenum) {
+    now_page = pagenum;
+    var html;
+    $.ajax({
+      type: "POST",
+      url: "/api",
+      data: { page: pagenum },
+      success: function (result) {
+        json_decode = JSON.parse(result)
+        $("#table_type1").text(json_decode.table_1);
+        $("#table_type2").text(json_decode.table_type2);
+        for (var i = 0; i < json_decode.data.length; i++) {
+          iter = json_decode.data[i];
+          html += "<tr><td v-for=\"info in table_data\">" + iter.data + "</td><td v-for=\"info in table_data\">" + iter.text + "</td></tr>";
+        }
+        $("#main_table").html(html);
+      },
+      error: function (e) {
+        console.log(e.status);
+        console.log(e.responseText);
+      }
+    });
+  }
+  $('#push_data').on('click', function () {
+    $.ajax({
+      type: "POST",
+      url: "/api",
+      data: {
+        push: now_page,
+        push_data: $("#data_input").val()
+      },
+      success: function (result) {
+        ClickCallback(now_page);
+      }
+    });
+  });
+</script>
+
+</html>
